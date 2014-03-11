@@ -1,0 +1,57 @@
+/* CSS */
+
+
+html{
+	font-size: 12px;
+}
+
+body{
+	font-family: "jaf-facitweb",sans-serif;
+}
+
+
+header{
+	top:0;
+	max-width: 600px;
+	z-index: 2;
+}
+
+header #menu li{
+
+}
+
+
+header #menu li.active{
+	text-decoration: underline;	
+}
+
+header #menu li a{
+	text-decoration: none;
+}
+
+
+.iconographie{
+	z-index: 1;
+}
+
+.item{
+	display:table-cell;
+	width: 400px;
+ 	padding:50px;
+ 	background: #00FFFF;
+ 	vertical-align: middle;
+}
+
+
+.item img{
+
+}
+
+
+.item p{
+
+}
+
+.item p.legend{
+
+}
