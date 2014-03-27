@@ -197,7 +197,7 @@ ol{
 .iconographie{
 	z-index: 1;
 	position: fixed;
-	top: 59px;
+	top: 200px;
 	left: 0;
 	right: 0;
 	bottom: 0;
@@ -212,7 +212,7 @@ ol{
 
 .item{
 	display:table-cell;
- 	padding: 55px 0px 50px 150px;
+ 	padding: 55px 0px 30px 150px;
  	padding-left: 50px;
  	vertical-align: bottom;
  	text-align: center;

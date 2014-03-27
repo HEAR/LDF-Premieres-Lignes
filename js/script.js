@@ -45,7 +45,10 @@ $(document).ready(function(){
 			$('.item:eq('+($(this).index())+')').find('.description').show();
 			$('.item:eq('+($(this).index())+')').find('.container').css('padding-left','430px')
 
-			$(".iconographie").scrollTo($('.item:eq('+($(this).index())+')'),800);
+			var leftOffset = 75;
+			if($(this).index() == 0){ leftOffset = 825; }
+
+			$(".iconographie").scrollTo($('.item:eq('+($(this).index())+')'),800, {offset: {top:0, left:leftOffset} });
 			$(".iconographie").css('z-index',3);
 			$('#header').css('z-index',2);
 		});
@@ -75,7 +78,10 @@ $(document).ready(function(){
 				$(this).parent().parent().find('.description').show();
 				$(this).parent().parent().css('padding-left','430px');
 
-				$(".iconographie").scrollTo($('.item:eq('+($(this).parent().parent().parent().index())+') .description'),800);
+				var leftOffset = 75;
+				if($(this).parent().parent().parent().index() == 0){ leftOffset = 825; }
+
+				$(".iconographie").scrollTo($('.item:eq('+($(this).parent().parent().parent().index())+')'),800, {offset: {top:0, left:leftOffset} });
 			}else{
 				$(".iconographie .item").removeClass('active');
 			}
@@ -127,7 +133,7 @@ $(document).ready(function(){
 
 function redim(){
 
- 	$ratio = ($('.iconographie').height())/(576+125+59);
+ 	$ratio = ($('.iconographie').height())/(576+105+200);
 
 	$(".iconographie img:not(.thumb)").each(function(){
 		$(this).width( $(this).attr('width') *  $ratio );
