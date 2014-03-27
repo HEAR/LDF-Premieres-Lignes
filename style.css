@@ -9,8 +9,13 @@ body{
 	font-family: "jaf-facitweb",sans-serif;
 }
 
+a{
+	text-decoration: none;
+	color: #ffffff;
+}
 
-header{
+
+#header{
 	top:0;
 	display: block;
 	max-width: 680px;
@@ -27,72 +32,75 @@ h1{
 	margin: 0 0 4px;
 	padding:7px;
 	background:#000000;
-	display: inline-block;
+	display: block;
+	float: left;
 }
 
 
-header .subtitle a:hover{
+#header .subtitle a:hover{
 	text-decoration:underline;
 }
 
-header #menu{
+#header #menu{
 	margin-bottom:4px;
 }
 
-header #menu ul{
+#header #menu ul{
 	list-style: none;
 }
 
-header #menu li{
+#header #menu li{
 	background-color:black;
 	float: left;
 }
 
-header #menu li+li{
+#header #menu li+li{
 	margin-left: 4px;
 }
 
 
-header #menu li.active{
+#header #menu li.active{
 	background-color:white;
 }
 
-header #menu li a{
+#header #menu li a{
 	text-decoration: none;
 }
 
-header #menu li.active a{
+#header #menu li.active a{
 	color: black;
 }
 
-header #menu li:hover{
+#header #menu li:hover{
 	text-decoration: none;
 	background: #FFFFFF;
 	color: #000000;
 }
 
-header .index li:hover{
+#header .index li:hover{
 	text-decoration: none;
 	background: #FFFFFF;
 	color: #000000;
 }
 
-header #menu li:hover a{
+#header #menu li:hover a{
 	color: black;
 }
 
-a{
-	text-decoration: none;
-	color: #ffffff;
-}
 
 
-header #content{
-	margin: 4px 0;
+
+#header #content{
+	margin: 0 0 4px;
 	line-height:150%;
 	clear: both;
-	display: table;
+	display: block;
+	float: left;
 	max-width: 480px;
+}
+
+#header #content img{
+	border:0;
 }
 	
 
@@ -165,7 +173,8 @@ header #content{
 	position: relative;
 	margin: 0 0 4px;
 	padding:7px;
-	display: inline-block;
+	display: block;
+	float: left;
 }
 
 p{
@@ -188,7 +197,7 @@ ol{
 .iconographie{
 	z-index: 1;
 	position: fixed;
-	top: 0;
+	top: 59px;
 	left: 0;
 	right: 0;
 	bottom: 0;

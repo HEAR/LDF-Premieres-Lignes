@@ -3,27 +3,30 @@
 // si on a besoin d'avoir du script jquery
 // (sans doute pour pouvoir afficher ou masquer les légendes des images)
 $(document).ready(function(){
-	console.log('ok');
+	//console.log('ok');
+
+	//alert('ok');
 
 	// on cache tous les divs de #content
-	$("header #content>div:not(.index)").hide();
+	$("#header #content>div").hide();
+	$("#header #content>div.index").show();
 
 	// quand on clique sur un élément du menu
-	$("header #menu li>a").click(function(event){
+	$("#header #menu li>a").click(function(event){
 
 		// on sélectionne la classe de l'élément li parent
 		var classe = $(this).parent().attr('class');
 
 		// on masque tous les divs de #content
-		$("header #content>div").hide();
+		$("#header #content>div").hide();
 		// on affiche le div ayant la classe correspondante
-		$("header #content>div."+ classe).show();
+		$("#header #content>div."+ classe).show();
 
 
 		// on enlève la classe .active de tous les élémentsdu menu
-		$("header #menu li").removeClass('active');
+		$("#header #menu li").removeClass('active');
 		// on ajoute la classe .active à l'élément du menu sur lequel on a cliqué
-		$("header #menu li."+ classe).addClass('active');
+		$("#header #menu li."+ classe).addClass('active');
 
 		// on empêche le comportement par défaut du bouton
 		event.preventDefault();
@@ -32,8 +35,19 @@ $(document).ready(function(){
 
 	$(".index li").each(function(){
 		$(this).click(function(event){
-			console.log('.item:eq('+($(this).index()+1)+')');
+			//console.log('.item:eq('+($(this).index()+1)+')');
+
+			$(".iconographie .item").removeClass('active');
+			$(".iconographie .item .container").css('padding-left','50px');
+			$(".iconographie .item .description").hide();
+
+			$('.item:eq('+($(this).index())+')').addClass('active');
+			$('.item:eq('+($(this).index())+')').find('.description').show();
+			$('.item:eq('+($(this).index())+')').find('.container').css('padding-left','430px')
+
 			$(".iconographie").scrollTo($('.item:eq('+($(this).index())+')'),800);
+			$(".iconographie").css('z-index',3);
+			$('#header').css('z-index',2);
 		});
 	});
 
@@ -86,25 +100,26 @@ $(document).ready(function(){
 
 	$(document).mousemove(function(event){
 		if(event.pageY < 200 || onMenu){
-			$('header').css('z-index',4);
+			$('#header').css('z-index',4);
 		}else{
-			$('header').css('z-index',2);
+			$('#header').css('z-index',2);
 		}
 	});
 
-	$('header').mouseover(function(){
+	$('#header').mouseover(function(){
 		onMenu = true;
-		$('header').css('z-index',4);
+		$('#header').css('z-index',4);
 	});
 
-	$('header').mouseout(function(){
+	$('#header').mouseout(function(){
 		onMenu = false;
-		$('header').css('z-index',2);
+		$('#header').css('z-index',2);
 	});
 
 	$('.iconographie').mouseover(function(){
-		$("header #menu li").removeClass('active');
-		$("header #content>div").hide();
+		//console.log('over iconographie');
+		$("#header #menu li").removeClass('active');
+		$("#header #content>div").hide();
 	});
 
 
@@ -112,7 +127,7 @@ $(document).ready(function(){
 
 function redim(){
 
- 	$ratio = ($('.iconographie').height())/(576+125);
+ 	$ratio = ($('.iconographie').height())/(576+125+59);
 
 	$(".iconographie img:not(.thumb)").each(function(){
 		$(this).width( $(this).attr('width') *  $ratio );
