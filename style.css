@@ -12,7 +12,7 @@ body{
 
 header{
 	top:0;
-	display: table-cell;
+	display: block;
 	max-width: 680px;
 	z-index: 2;
 	color: #FFFFFF;
@@ -24,16 +24,15 @@ h1{
 	text-transform: uppercase;
 	font-weight:500;
 	font-size:20px;
-	margin: 0;
+	margin: 0 0 4px;
 	padding:7px;
 	background:#000000;
-	margin: 4px;
-	display: table-cell;
+	display: inline-block;
 }
 
 
 header .subtitle a:hover{
-text-decoration:underline;
+	text-decoration:underline;
 }
 
 header #menu{
@@ -97,13 +96,14 @@ header #content{
 }
 	
 
-.presentation{ padding:7px; background:#000000;}
-.fr{padding:7px; background:#000000}
-.de{padding:7px;background:#000000}
-.en{padding:7px;background:#000000}
-.index{	padding:7px;background:#000000;}
-
-
+.presentation,
+.fr,
+.de,
+.en,
+.index{
+	padding:7px;
+	background:#000000;
+}
 
 #content .presentation,
 #content .fr,
@@ -143,10 +143,12 @@ header #content{
 }
 
 /* STYLE DU TEXTE DE CONTENU */
-#content>div{background:black;
+#content>div{
+	background:black;
 }
 
-#content p{background:black;
+#content p{
+	background:black;
 }
 
 #content .presentation img{
@@ -161,9 +163,9 @@ header #content{
 .subtitle{
 	text-transform:none;
 	position: relative;
-	margin: 4px 0;
+	margin: 0 0 4px;
 	padding:7px;
-	display: table;
+	display: inline-block;
 }
 
 p{
@@ -200,7 +202,6 @@ ol{
 
 
 .item{
-	position: relative;
 	display:table-cell;
  	padding: 55px 0px 50px 150px;
  	padding-left: 50px;
@@ -208,13 +209,16 @@ ol{
  	text-align: center;
 }
 
-#index {height:200px;width:800px;}
+#index {
+	height:200px;
+	width:800px;
+}
 
 #index.item li{
-position:relative;
-display:inline-block;
-padding: 0; 
-margin: 0px 0px;
+	position:relative;
+	display:inline-block;
+	padding: 0; 
+	margin: 0px 0px;
 }
 #index.item li img{
 	border:0;
@@ -234,27 +238,32 @@ margin: 0px 0px;
 	list-style:none;
 }
 
+.item .container{
+	position: relative;
+}
+
 .item .image{
-position:relative;
-z-index:2;
+	position:relative;
+	z-index:2;
+}
+
+.item:first-child{
+	padding-left:800px;
 }
 
 .item:last-child{
-padding-right:400px;
+	padding-right:400px;
 }
 
 .item button{
 	display: inline-block;
-	
 	outline: none;
-	
 	border:none;
 	background:transparent;
-	
     cursor:pointer;
     position:absolute;
     bottom:7px;
-    left:-23px;
+    left:-28px;
     padding:0;
     margin:0;
 }
@@ -266,7 +275,7 @@ padding-right:400px;
 
 .item .description{
 	position: absolute;
-	bottom:50px;
+	bottom:0px;
 	left: 0;
 	width: 400px;
  	text-align: left;
@@ -275,8 +284,9 @@ padding-right:400px;
 }
 
 
-.item p{line-height:130%;
-font-weight:400;
+.item p{
+	line-height:130%;
+	font-weight:400;
 }
 
 .item p.legend{
