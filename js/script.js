@@ -43,7 +43,7 @@ $(document).ready(function(){
 
 			$('.item:eq('+($(this).index())+')').addClass('active');
 			$('.item:eq('+($(this).index())+')').find('.description').show();
-			$('.item:eq('+($(this).index())+')').find('.container').css('padding-left','430px')
+			$('.item:eq('+($(this).index())+')').find('.container').css('padding-left','440px')
 
 			var leftOffset = 75;
 			if($(this).index() == 0){ leftOffset = 825; }
@@ -76,7 +76,7 @@ $(document).ready(function(){
 			if(!$(this).parent().parent().parent().hasClass('active')){
 				$(this).parent().parent().parent().addClass('active');
 				$(this).parent().parent().find('.description').show();
-				$(this).parent().parent().css('padding-left','430px');
+				$(this).parent().parent().css('padding-left','440px');
 
 				var leftOffset = 75;
 				if($(this).parent().parent().parent().index() == 0){ leftOffset = 825; }
